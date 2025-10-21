@@ -34,7 +34,7 @@ ventana.configure(bg= "#2E3440")
 
 # --- Frame: Formulario ---
 frame_formulario = tk.Frame(ventana, bg= "#2E3440")
-frame_formulario.grid(row=0, column=0, padx=10, pady=10, sticky="ew")
+frame_formulario.grid(row=0, column=0, padx=10, pady=10)
 
 # --- Diccionario de campos ---
 campos_info = {
@@ -42,7 +42,7 @@ campos_info = {
     "Descripción": {},
     "Director": {},
     "Protagonista": {},
-    "Valoración": {},
+    "Valoración": {}, 
     "Prioridad": {},
     "Completado": {}
 }
@@ -50,21 +50,21 @@ campos_info = {
 # --- Crear etiquetas y campos dinámicamente ---
 for idx, (etiqueta, datos) in enumerate(campos_info.items()):
     lbl = tk.Label(frame_formulario, text=f"{etiqueta}:", fg="black", bg="#D3D3D3", font=("Arial", 12))
-    entry = tk.Entry(frame_formulario, width=40 if etiqueta == "Descripción" else 25)
+    entry = tk.Entry(frame_formulario, width=70 if etiqueta == "Descripción" else 50)
 
-    lbl.grid(row=idx, column=0, padx=5, pady=5, sticky="w")
-    entry.grid(row=idx, column=1, padx=5, pady=5, sticky="ew")
+    lbl.grid(row=idx, column=0, padx=5, pady=5, ipady=5,)
+    entry.grid(row=idx, column=1, padx=5, pady=5, ipady=5)
 
     campos_info[etiqueta]["label"] = lbl
     campos_info[etiqueta]["entry"] = entry
 
-frame_formulario.grid_columnconfigure(1, weight=1)
+frame_formulario.grid_columnconfigure(1, weight=2)
 
 # --- Frame: Botones ---
 frame_botones = tk.Frame(ventana, bg="#88C0D0")
 frame_botones.grid(row=1, column=0, padx=10, pady=10)
 
-botones = ["Añadir Tarea", "Modificar Tarea", "Eliminar Tarea"]
+botones = ["Añadir Película", "Modificar Película", "Eliminar Película"]
 for i, texto in enumerate(botones):
     btn = tk.Button(frame_botones, text=texto, fg="black", bg= "#88C0D0", font=("Arial", 12))
     btn.grid(row=0, column=i, padx=10, pady=5)
@@ -76,7 +76,7 @@ etiqueta_lista.grid(row=2, column=0, padx=10, pady=5, sticky="w")
 frame_lista = tk.Frame(ventana)
 frame_lista.grid(row=3, column=0, padx=10, pady=5, sticky="nsew")
 
-lista_tareas = tk.Listbox(frame_lista, width=60, height=10)
+lista_tareas = tk.Listbox(frame_lista, width=60, height=5)
 scrollbar = tk.Scrollbar(frame_lista, orient="vertical", command=lista_tareas.yview)
 lista_tareas.config(yscrollcommand=scrollbar.set)
 
