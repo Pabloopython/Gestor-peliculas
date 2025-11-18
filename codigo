@@ -1,4 +1,4 @@
-# ALEX EXPLICAS HASTA LINEA 73
+
 # --- Importamos Tkinter para la interfaz y sqlite3 para la base de datos ---
 import tkinter as tk
 import sqlite3
@@ -75,7 +75,6 @@ campos_info = {
     "Prioridad": {}
 }
 
-# PABLO DESDE AQUÍ LOS EXPLICAS HASTA LINEA 103
 # --- Crear etiquetas y campos dinámicamente ---
 # PABLO
 # BUCLE PARA CREAR LAS ETIQUETAS Y CAJAS DE TEXTO
@@ -258,7 +257,7 @@ def cargar_seleccion(event=None):
         barra_estado.config(text=f"❌ Error al cargar selección: {e}")
 
 
-# PABLO HASTA LINEA 231
+# PABLO
 # --- Frame: Botones ---
 # Contenedor donde van los botones (color de fondo (bg))
 frame_botones = tk.Frame(frame_centrado, bg="#88C0D0")
@@ -288,7 +287,7 @@ lista_tareas.bind('<<ListboxSelect>>', cargar_seleccion) # ListboxSelect ocurre 
 
 # --- Cargar inicial desde BD ---
 
-# ALEX EXPLICAS HASTA EL FINAL
+# ALEX
 
 # --- Función que carga las películas de la base de datos y las muestra en la lista de películas ---
 def cargar_peliculas_iniciales():
