@@ -189,23 +189,12 @@ class database_manager:
             barra_estado.config(text=f"❌ Error al cargar selección: {e}")
 
     def cargar_peliculas_iniciales():
-    try:
-        conexion, cursor = conectar_db()
-        # --- SQL obtiene los datos principales de las películas ---
-        sql = "SELECT nombre, descripcion, director, protagonista, valoracion, prioridad FROM Peliculas"
-        cursor.execute(sql)
+            conexion, cursor = conectar_db()
+            # --- SQL obtiene los datos principales de las películas ---
+            sql = "SELECT nombre, descripcion, director, protagonista, valoracion, prioridad FROM Peliculas"
+            cursor.execute(sql)
         # ---  Devuelve todas las filas obtenidas de la tabla ---
-        registros = cursor.fetchall()
-        # ---  Analiza cada película obtenida ---
-        for fila in registros:
-            pelicula_texto = " | ".join(fila) # --- Convierte los datos de la película en una sola línea de texto ---
-            lista_tareas.insert(tk.END, pelicula_texto) # --- Inserta la película dentro de la lista de la interfaz ---
-        print(
-            f"Se han cargado {len(registros)} películas de la base de datos.")
-    # ---  En caso de que ocurra un error al leer la base de datos ---
-    except sqlite3.Error as e:
-        barra_estado.config(text=f"❌ Error al cargar la base de datos: {e}")
-    # ---  Función que se ejecuta siempre para cerrar la conexión  ---
-    finally:
-        if 'conexion' in locals(): # --- Sólo si existe la variable conexión ---
-            conexion.close()
+            registros = cursor.fetchall()
+ 
+            if 'conexion' in locals(): # --- Sólo si existe la variable conexión ---
+                conexion.close()
