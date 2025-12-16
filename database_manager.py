@@ -66,7 +66,7 @@ class DatabaseManager:
 
         self.conexion.commit()   # Guarda cambios
 
-    # Método corregido: antes tenía un nombre mal escrito en tu versión anterior
+
     def eliminar_pelicula(self, id_pelicula):
         # Elimina una película según su ID
         self.cursor.execute("""
