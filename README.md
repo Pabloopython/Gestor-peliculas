@@ -1,2 +1,2 @@
 # Gestor-peliculas
-Alejandro, Alvaro y Pablo
+Esta aplicacion creada por: Alejandro, Alvaro y Pablo trata sobre un gestor de películas en las que el usuario puede organizar las películas pendientes por ver. Además dispone de varias funciones como: añadir una descripción, valoración, establecer una prioridad y un buscador dentro de la propia aplicación para facilitar la busqueda de películas añadidas anteriormente. 
