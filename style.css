@@ -1,6 +1,6 @@
 #centrado{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; 
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -22,6 +22,26 @@ article{
     border: 3px solid #000000;
     margin: 0px;
     font-family: Helvetica;
-    
 }
 
+.imagen_pelicula {
+    display: flex;       /* Activa el modo flexible para sus hijos */
+    flex-wrap: wrap;    /* Si no caben, saltan a la siguiente línea */
+    gap: 20px;          /* Crea un pasillo de separación entre tarjetas */
+}
+
+/* Estilos normales (para ordenador) */
+article {
+    width: 300px;
+}
+
+/* Estilos para móviles (pantallas de menos de 600px) */
+@media (max-width: 600px) {
+    article {
+        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
+    }
+    
+    h1 {
+        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
+    }
+}
