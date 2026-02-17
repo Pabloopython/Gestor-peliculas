@@ -13,7 +13,12 @@ article{
     margin-top: 20px;
     border-bottom: 2px solid black;
     background-color: aquamarine;
+
+     /* Acabado premium */
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
 #título {
     color: #3D45AA;
     background-color: #FFF19B;
@@ -21,6 +26,7 @@ article{
     padding: 15px;
     border: 3px solid #000000;
     margin: 0px;
+<<<<<<< HEAD
     font-family: Helvetica;
 }
 
@@ -44,4 +50,43 @@ article {
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
     }
+=======
+    font-family: Helvetica;  
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* para vertical */
+    align-items: center;     /* para horizontal */
+    text-align: center;
+}
+
+/* Estilos normales (para ordenador) */
+article {
+    width: 500px;
+}
+
+/* Estilos para móviles (pantallas de menos de 600px) */
+@media (max-width: 600px) {
+    article {
+        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
+    }
+    
+    h1 {
+        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
+    }
+}
+
+/* Transición suave */
+article {
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+article:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+    cursor: pointer;
+>>>>>>> c60ccc38760f4c97964c9c7204aaec2952b6eda2
 }
