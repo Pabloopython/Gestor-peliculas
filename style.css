@@ -25,6 +25,14 @@ article{
     font-family: Helvetica;  
 }
 
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* para vertical */
+    align-items: center;     /* para horizontal */
+    text-align: center;
+}
+
 /* Estilos normales (para ordenador) */
 article {
     width: 500px;
@@ -39,4 +47,3 @@ article {
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
     }
-}
