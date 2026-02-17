@@ -47,3 +47,16 @@ article {
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
     }
+}
+
+/* Transición suave */
+article {
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+article:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+    cursor: pointer;
+}
