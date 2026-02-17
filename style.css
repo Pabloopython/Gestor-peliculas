@@ -25,3 +25,10 @@ article{
     
 }
 
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* para vertical */
+    align-items: center;     /* para horizontal */
+    text-align: center;
+}
