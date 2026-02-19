@@ -12,8 +12,7 @@ article{
     background-color: aquamarine;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
+    
 }
 
 #título {
@@ -27,9 +26,11 @@ article{
 }
 
 .imagen_pelicula {
-    display: flex;       /* Activa el modo flexible para sus hijos */
-    flex-wrap: wrap;    /* Si no caben, saltan a la siguiente línea */
-    gap: 20px;          /* Crea un pasillo de separación entre tarjetas */
+    width: 200px;
+    height: 250px;
+    align-self: center;
+    padding: 23px;
+
 }
 
 /* Estilos normales (para ordenador) */
@@ -45,7 +46,7 @@ article {
     
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }
+    }  
 }
 
 #footer {
