@@ -2,21 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 20px;
+    align-items: stretch;
 }
 
 article{
-    padding: 17px;
-    border: 2px solid black;
-    margin: 10px;
-    margin-top: 20px;
-    border-bottom: 2px solid black;
+    width: 450px;
+    padding: 20px;
     background-color: aquamarine;
-
-     /* Acabado premium */
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
 }
 
 #título {
@@ -26,7 +23,29 @@ article{
     padding: 15px;
     border: 3px solid #000000;
     margin: 0px;
-    font-family: Helvetica;  
+    font-family: Helvetica;
+}
+
+.imagen_pelicula {
+    display: flex;       /* Activa el modo flexible para sus hijos */
+    flex-wrap: wrap;    /* Si no caben, saltan a la siguiente línea */
+    gap: 20px;          /* Crea un pasillo de separación entre tarjetas */
+}
+
+/* Estilos normales (para ordenador) */
+article {
+    width: 300px;
+}
+
+/* Estilos para móviles (pantallas de menos de 600px) */
+@media (max-width: 600px) {
+    article {
+        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
+    }
+    
+    h1 {
+        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
+    }
 }
 
 #footer {
