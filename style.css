@@ -48,8 +48,7 @@ article {
     
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }
-    font-family: Helvetica;  
+    }  
 }
 
 #footer {
@@ -88,4 +87,4 @@ article:hover {
     cursor: pointer;
 }
 
-/* Eesto es una prueba, eliminar */
+/* Eesto es una prueba, eliminar */ 
