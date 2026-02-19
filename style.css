@@ -26,7 +26,6 @@ article{
     padding: 15px;
     border: 3px solid #000000;
     margin: 0px;
-<<<<<<< HEAD
     font-family: Helvetica;
 }
 
@@ -50,7 +49,6 @@ article {
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
     }
-=======
     font-family: Helvetica;  
 }
 
@@ -88,5 +86,6 @@ article:hover {
     background-color: lightblue;
     transform: scale(1.05);
     cursor: pointer;
->>>>>>> c60ccc38760f4c97964c9c7204aaec2952b6eda2
 }
+
+/* Eesto es una prueba, eliminar */
