@@ -6,6 +6,15 @@
     align-items: stretch;
 }
 
+main {
+    background-color: rgb(109, 226, 242);
+}
+
+section {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 article{
     width: 450px;
     padding: 20px;
