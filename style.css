@@ -1,19 +1,23 @@
 #centrado{
-    display: flex;
+     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     align-items: stretch;
 }
+   
+    
 
-main {
+section {
+    margin-top: 10px;
+    margin-block-end: 10px;
+}
+
+html{
     background-color: rgb(109, 226, 242);
 }
 
-section {
-    margin-left: 150px;
-    margin-right: 150px;
-}
+
 
 article{
     width: 450px;
