@@ -63,6 +63,24 @@ article:hover {
     cursor: pointer;
 }
 
+.articulos.small {
+  font-size: 14px;
+}
+
+.articulos.medium {
+  font-size: 18px;
+}
+
+.articulos.large {
+  font-size: 24px;
+}
+
+#vista {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
 /* Estilos normales (para ordenador) */
 article {
     width: 500px;
@@ -78,3 +96,5 @@ article {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
     }  
 }
+
+/* wsdkodked */
