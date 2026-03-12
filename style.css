@@ -86,6 +86,10 @@ article {
     width: 500px;
 }
 
+.noche {
+    background-color: black;
+    }
+
 /* Estilos para móviles */
 @media (max-width: 600px) {
     article {
