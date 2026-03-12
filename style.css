@@ -6,8 +6,6 @@
     align-items: stretch;
 }
    
-    
-
 section {
     margin-top: 10px;
     margin-block-end: 10px;
@@ -16,8 +14,6 @@ section {
 html{
     background-color: rgb(109, 226, 242);
 }
-
-
 
 article{
     width: 450px;
@@ -47,28 +43,24 @@ article{
 
 }
 
-/* Estilos normales (para ordenador) */
-article {
-    width: 300px;
-}
-
-/* Estilos para móviles (pantallas de menos de 600px) */
-@media (max-width: 600px) {
-    article {
-        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
-    }
-    
-    h1 {
-        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }  
-}
-
 #footer {
     display: flex;
     flex-direction: column;
     justify-content: center; /* para vertical */
     align-items: center;     /* para horizontal */
     text-align: center;
+}
+
+/* Transición suave */
+article {
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+article:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Estilos normales (para ordenador) */
@@ -84,17 +76,5 @@ article {
     
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }
-}
-
-/* Transición suave */
-article {
-    transition: all 0.3s ease;
-}
-
-/* Efecto al pasar el ratón */
-article:hover {
-    background-color: lightblue;
-    transform: scale(1.05);
-    cursor: pointer;
+    }  
 }
