@@ -51,7 +51,7 @@ article{
     text-align: center;
 }
 
-/* Transición suave */
+/* Transición */
 article {
     transition: all 0.3s ease;
 }
@@ -86,15 +86,13 @@ article {
     width: 500px;
 }
 
-/* Estilos para móviles (pantallas de menos de 600px) */
+/* Estilos para móviles */
 @media (max-width: 600px) {
     article {
-        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
+        width: 100%; /* Ocupa todo el ancho en el móvil */
     }
     
     h1 {
         font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
     }  
 }
-
-/* wsdkodked */
