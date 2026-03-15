@@ -2,7 +2,7 @@ const titulo = document.querySelector("h1");
 const vista = document.querySelector("mododevista")
 const botonmodo = document.querySelector("#botonmodo");
 
-titulo.style.color = "red";
+titulo.style.color = "lightblue";
 
 const sizes = ["small", "medium", "large"];
 let current = 1; // empieza en medium
@@ -17,7 +17,7 @@ button.addEventListener("click", () => {
 
 });
  */
-botonmodo.addEventListener("click", function() {
-    console.log("modo");
-    document.body.classList.toggle("noche");
+botonmodo.addEventListener("click", function () {
+  console.log("modo");
+  document.body.classList.toggle("noche");
 });

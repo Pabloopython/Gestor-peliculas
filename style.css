@@ -1,32 +1,43 @@
-#centrado{
-     display: flex;
+/* Este contenedor organiza los artículos de las películas */
+#centrado {
+    display: flex;
+    /* Usamos flexbox para ordenar los elementos */
     flex-wrap: wrap;
+    /* Permite que los elementos bajen a otra línea */
     justify-content: center;
+    /* Centra los artículos horizontalmente */
     gap: 20px;
+    /* Espacio entre artículos */
     align-items: stretch;
+    /* Hace que todos tengan la misma altura */
 }
-   
+
+/* Margen superior e inferior para las secciones */
 section {
     margin-top: 10px;
     margin-block-end: 10px;
 }
 
-html{
+/* Color de fondo de toda la página */
+html {
     background-color: rgb(109, 226, 242);
 }
 
-article{
+/* Estilo de cada tarjeta de película */
+article {
     width: 450px;
     padding: 20px;
     border: 2px solid black;
     background-color: aquamarine;
     border-radius: 16px;
+    /* Bordes redondeados */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    
+    /* Sombra para efecto visual */
 }
 
+/* Estilo del título principal */
 #título {
-    color: #3D45AA;
+    color: #1e2ac9;
     background-color: #FFF19B;
     text-align: center;
     padding: 15px;
@@ -35,68 +46,76 @@ article{
     font-family: Helvetica;
 }
 
+/* Estilo de las imágenes de las películas */
 .imagen_pelicula {
     width: 200px;
     height: 250px;
     align-self: center;
     padding: 23px;
-
 }
 
+/* Estilo del footer */
 #footer {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* para vertical */
-    align-items: center;     /* para horizontal */
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-/* Transición */
+/* Transición para animaciones suaves */
 article {
     transition: all 0.3s ease;
 }
 
-/* Efecto al pasar el ratón */
+/* Efecto cuando el ratón pasa por encima de un artículo */
 article:hover {
     background-color: lightblue;
     transform: scale(1.05);
+    /* Hace que se agrande un poco */
     cursor: pointer;
 }
 
+/* Tamaños de texto según el modo de visualización */
 .articulos.small {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 .articulos.medium {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .articulos.large {
-  font-size: 24px;
+    font-size: 24px;
 }
 
+/* Estilo del botón de cambio de vista */
 #vista {
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
-/* Estilos normales (para ordenador) */
+/* Tamaño de artículos en ordenador */
 article {
     width: 500px;
 }
 
+/* Clase para modo noche */
 .noche {
     background-color: black;
-    }
+}
 
 /* Estilos para móviles */
 @media (max-width: 600px) {
+
+    /* Los artículos ocupan todo el ancho */
     article {
-        width: 100%; /* Ocupa todo el ancho en el móvil */
+        width: 100%;
     }
-    
+
+    /* El título se hace más pequeño */
     h1 {
-        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }  
+        font-size: 1.5rem;
+    }
 }
