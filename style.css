@@ -103,7 +103,17 @@ article {
 
 /* Clase para modo noche */
 .noche {
-    background-color: black;
+    background-color: rgb(68, 65, 65);
+    color: white;
+    article {
+        background-color: rgb(143, 137, 137);
+        color: white;
+    }
+    #título {
+        background-color: rgb(143, 137, 137);
+        color: white;
+    }
+
 }
 
 /* Estilos para móviles */

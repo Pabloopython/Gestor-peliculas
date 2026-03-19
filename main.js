@@ -2,7 +2,7 @@ const titulo = document.querySelector("h1");
 const vista = document.querySelector("mododevista")
 const botonmodo = document.querySelector("#botonmodo");
 
-titulo.style.color = "lightblue";
+titulo.style.color = "darkwhite";
 
 const sizes = ["small", "medium", "large"];
 let current = 1; // empieza en medium
