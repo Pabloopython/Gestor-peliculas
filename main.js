@@ -1,22 +1,22 @@
 const titulo = document.querySelector("h1");
-const vista = document.querySelector("mododevista")
+const vista = document.querySelector("#vista")
 const botonmodo = document.querySelector("#botonmodo");
+const articulo = document.querySelectorAll(".articulo")
 
 titulo.style.color = "lightblue";
 
 const sizes = ["small", "medium", "large"];
 let current = 1; // empieza en medium
-/* 
-button.addEventListener("click", () => {
 
-  articulos.classList.remove(sizes[current]);
+vista.addEventListener("click", () => {
+  articulo.forEach(articulo => {
+    articulo.classList.remove(sizes[current]);
+    articulo.classList.add(sizes[(current + 1) % sizes.length]);
+  });
 
   current = (current + 1) % sizes.length;
-
-  articulos.classList.add(sizes[current]);
-
 });
- */
+
 botonmodo.addEventListener("click", function () {
   console.log("modo");
   document.body.classList.toggle("noche");

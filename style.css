@@ -13,7 +13,7 @@
 }
 
 /* Margen superior e inferior para las secciones */
-section {
+searticlection {
     margin-top: 10px;
     margin-block-end: 10px;
 }
@@ -77,15 +77,15 @@ article:hover {
 }
 
 /* Tamaños de texto según el modo de visualización */
-.articulos.small {
+.small {
     font-size: 14px;
 }
 
-.articulos.medium {
+.medium {
     font-size: 18px;
 }
 
-.articulos.large {
+.large {
     font-size: 24px;
 }
 
