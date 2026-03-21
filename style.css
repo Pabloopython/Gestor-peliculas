@@ -13,7 +13,7 @@
 }
 
 /* Color de fondo de toda la página */
-html {
+body {
     background-color: rgba(117, 200, 221, 0.76);
 }
 
@@ -28,17 +28,19 @@ article {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     /* Sombra para efecto visual */
 
-    transition: all 0.7s ease;
+    transition: all 0.5s ease;
 }
 
 /* Estilo del título principal */
 #título {
     color: #1e2ac9;
-    background-color: #FFF19B;
+    background-color: #fcef9b;
     text-align: center;
     padding: 15px;
     border: 3px solid #000000;
     font-family: Helvetica;
+
+    transition: 0.5s ease, color 0.5s ease;
 }
 
 /* Estilo de las imágenes de las películas */
@@ -88,12 +90,14 @@ article:hover {
     padding: 10px;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: 0.3s ease, color 0.3s ease;
 }
 
 /* Clase para modo noche */
 .noche {
     background-color: rgb(68, 65, 65);
     color: white;
+    transition: 0.5s ease, color 0.5s ease;
 
     html {
         background-color: rgb(68, 65, 65);
@@ -146,7 +150,7 @@ html.noche {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.541);
     /* fondo oscuro */
-    z-index: 9999;
+    z-index: 1;
     /* lo pone por encima de TODO */
 
     opacity: 0;
@@ -167,14 +171,17 @@ html.noche {
     padding: 20px;
     width: 70%;
     border-radius: 10px;
+
     display: flex;
     justify-content: center;
+
     width: fit-content;
     min-width: 300px;
     max-width: 600px;
+
     transform: scale(1.2);
     transform-origin: center;
-
+    transition: all 0.4s ease;
 }
 
 /* Filtros */
@@ -192,6 +199,8 @@ html.noche {
     cursor: pointer;
     border-radius: 8px;
     border: none;
+
+    transition: 0.9s ease, color 0.9s ease;
 }
 
 /* Botón activo */

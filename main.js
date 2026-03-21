@@ -3,7 +3,7 @@ const vista = document.querySelector("#vista")
 const botonmodo = document.querySelector("#botonmodo");
 const articulo = document.querySelectorAll(".articulo")
 
-titulo.style.color = "darkwhite";
+titulo.style.color = "lightblue";
 
 const sizes = ["small", "medium", "large"];
 let current = 1; // empieza en medium
