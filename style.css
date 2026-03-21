@@ -12,20 +12,14 @@
     /* Hace que todos tengan la misma altura */
 }
 
-/* Margen superior e inferior para las secciones */
-searticlection {
-    margin-top: 10px;
-    margin-block-end: 10px;
-}
-
 /* Color de fondo de toda la página */
 html {
-    background-color: rgb(109, 226, 242);
+    background-color: rgba(117, 200, 221, 0.76);
 }
 
 /* Estilo de cada tarjeta de película */
 article {
-    width: 450px;
+    width: 500px;
     padding: 20px;
     border: 2px solid black;
     background-color: aquamarine;
@@ -33,6 +27,8 @@ article {
     /* Bordes redondeados */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     /* Sombra para efecto visual */
+
+    transition: all 0.7s ease;
 }
 
 /* Estilo del título principal */
@@ -42,7 +38,6 @@ article {
     text-align: center;
     padding: 15px;
     border: 3px solid #000000;
-    margin: 0px;
     font-family: Helvetica;
 }
 
@@ -64,11 +59,6 @@ article {
     padding: 20px;
 }
 
-/* Transición para animaciones suaves */
-article {
-    transition: all 0.3s ease;
-}
-
 /* Efecto cuando el ratón pasa por encima de un artículo */
 article:hover {
     background-color: lightblue;
@@ -80,26 +70,24 @@ article:hover {
 /* Tamaños de texto según el modo de visualización */
 .small {
     font-size: 14px;
+    transform: scale(0.9);
 }
 
 .medium {
     font-size: 18px;
+    transform: scale(0.95);
 }
 
 .large {
     font-size: 24px;
+    transform: scale(1);
 }
 
 /* Estilo del botón de cambio de vista */
 #vista {
-    padding: 10px 15px;
+    padding: 10px;
     margin-bottom: 20px;
     cursor: pointer;
-}
-
-/* Tamaño de artículos en ordenador */
-article {
-    width: 500px;
 }
 
 /* Clase para modo noche */
@@ -107,8 +95,13 @@ article {
     background-color: rgb(68, 65, 65);
     color: white;
 
+    html {
+        background-color: rgb(68, 65, 65);
+        color: white;
+    }
+
     article {
-        background-color: rgb(143, 137, 137);
+        background-color: rgb(68, 65, 65);
         color: white;
     }
 
@@ -121,7 +114,11 @@ article {
         background-color: rgb(143, 137, 137);
         color: white;
     }
+}
 
+html.noche {
+    background-color: rgb(68, 65, 65);
+    color: white;
 }
 
 /* Estilos para móviles */
@@ -147,13 +144,22 @@ article {
     left: 0;
     width: 100%;
     height: 100%;
-
     background-color: rgba(0, 0, 0, 0.541);
     /* fondo oscuro */
-
     z-index: 9999;
     /* lo pone por encima de TODO */
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.9s ease, color 0.9s ease;
 }
+
+/* Modal visible */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 .modal-contenido {
     background-color: aquamarine;
@@ -169,4 +175,37 @@ article {
     transform: scale(1.2);
     transform-origin: center;
 
+}
+
+/* Filtros */
+#filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+
+    transition: 0.9s ease, color 0.9s ease;
+}
+
+#filtros button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Botón activo */
+.activo {
+    background-color: black;
+    color: white;
+}
+
+/* Ocultar elementos */
+.oculto {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    /* para que no se pueda clickear */
+    transition: all 0.7s ease;
 }

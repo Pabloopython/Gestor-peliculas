@@ -39,6 +39,14 @@
             </div>
         </div>
 
+        <div id="filtros">
+            <button data-filtro="todos">Todos</button>
+            <button data-filtro="animacion">Animación</button>
+            <button data-filtro="terror">Terror</button>
+            <button data-filtro="romance">Romance</button>
+            <button data-filtro="Oeste">Oeste</button>
+        </div>
+
     </header>
 
     <hr>
@@ -47,7 +55,7 @@
         <section id="centrado">
             <!-- Cada película se guarda dentro de un article -->
 
-            <article class="articulo">
+            <article class="articulo" data-categoria="animacion">
 
                 <!-- Título de la película -->
                 <strong>Cars:</strong>
@@ -74,7 +82,7 @@
 
 
             <!-- Segunda película -->
-            <article class="articulo">
+            <article class="articulo" data-categoria="Oeste">
                 <strong>El bueno, el feo y el malo:</strong>
 
                 Son tres cazadores de recompensa que buscan un tesoro que ninguno de ellos puede encontrar sin la
@@ -96,7 +104,7 @@
 
 
             <!-- Tercera película -->
-            <article class="articulo">
+            <article class="articulo" data-categoria="comedia">
                 <strong>Campeonex</strong>
 
                 Esta película sigue a un equipo de personas con discapacidad intelectual que cambian el baloncesto
@@ -116,7 +124,7 @@
 
 
             <!-- Cuarta película -->
-            <article class="articulo">
+            <article class="articulo" data-categoria="terror">
                 <strong>La matanza de Texas 1974</strong>
 
                 Película clásica de terror donde un grupo de jóvenes se encuentra con una familia de asesinos.
@@ -134,7 +142,7 @@
 
 
             <!-- Quinta película -->
-            <article class="articulo">
+            <article class="articulo" data-categoria="romance">
                 <strong>El diario de Noa</strong>
 
                 Es una historia romántica sobre el amor entre Noah y Allie.
@@ -152,7 +160,7 @@
 
 
             <!-- Sexta película -->
-            <article class="articulo">
+            <article class="articulo" data-categoria="terror">
                 <strong>El Resplandor</strong>
 
                 Historia de terror psicológico sobre un escritor que se vuelve loco en un hotel aislado.
