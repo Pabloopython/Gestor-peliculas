@@ -31,7 +31,7 @@ const articulos = document.querySelectorAll("article");
 articulos.forEach(article => {
     article.addEventListener("click", () => {
 
-        // Copiamos TODO el contenido del artículo
+        // Copiamos todo el contenido del artículo
         modalBody.innerHTML = article.innerHTML;
 
         // Mostramos el modal

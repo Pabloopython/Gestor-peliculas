@@ -40,7 +40,7 @@ article {
     border: 3px solid #000000;
     font-family: Helvetica;
 
-    transition: 0.5s ease, color 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 /* Estilo de las imágenes de las películas */
@@ -90,14 +90,14 @@ article:hover {
     padding: 10px;
     margin-bottom: 20px;
     cursor: pointer;
-    transition: 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 /* Clase para modo noche */
 .noche {
     background-color: rgb(68, 65, 65);
     color: white;
-    transition: 0.5s ease, color 0.5s ease;
+    transition: all 0.5s ease;
 
     html {
         background-color: rgb(68, 65, 65);
@@ -155,7 +155,7 @@ html.noche {
 
     opacity: 0;
     visibility: hidden;
-    transition: 0.9s ease, color 0.9s ease;
+    transition: all 0.9s ease;
 }
 
 /* Modal visible */
@@ -191,7 +191,7 @@ html.noche {
     gap: 10px;
     margin: 20px;
 
-    transition: 0.9s ease, color 0.9s ease;
+    transition: all 0.9s ease;
 }
 
 #filtros button {
@@ -200,7 +200,7 @@ html.noche {
     border-radius: 8px;
     border: none;
 
-    transition: 0.9s ease, color 0.9s ease;
+    transition: all 0.9s ease;
 }
 
 /* Botón activo */
