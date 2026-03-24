@@ -34,11 +34,12 @@ articulos.forEach(article => {
         // Copiamos todo el contenido del artículo
         modalBody.innerHTML = article.innerHTML;
 
-        // Mostramos el modal
+        // Lo ejectuta para hacer aparecer la ventana emergente
         modal.style.display = "block";
     });
 });
 
+<<<<<<< HEAD
 // Abrir modal
 articulos.forEach(article => {
     article.addEventListener("click", () => {
@@ -49,6 +50,9 @@ articulos.forEach(article => {
 })
 
 // Cerrar modal
+=======
+// Cerrar ventana emergente
+>>>>>>> d2147f0664359f61a6bec9e5d42bab0ee3686f89
 cerrar.addEventListener("click", () => {
     modal.style.display = "none";
 });
@@ -83,4 +87,15 @@ botonesFiltro.forEach(boton => {
     });
 });
 
+<<<<<<< HEAD
 
+=======
+// Abrir ventana emergente
+articulos.forEach(article => {
+    article.addEventListener("click", () => {
+        modalBody.innerHTML = `<article class="articulo">${article.innerHTML}</article>`;
+
+        modal.classList.add("show");
+    });
+});
+>>>>>>> d2147f0664359f61a6bec9e5d42bab0ee3686f89
