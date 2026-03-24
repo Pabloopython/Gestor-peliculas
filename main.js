@@ -34,12 +34,12 @@ articulos.forEach(article => {
         // Copiamos todo el contenido del artículo
         modalBody.innerHTML = article.innerHTML;
 
-        // Mostramos el modal
+        // Lo ejectuta para hacer aparecer la ventana emergente
         modal.style.display = "block";
     });
 });
 
-// Cerrar modal
+// Cerrar ventana emergente
 cerrar.addEventListener("click", () => {
     modal.style.display = "none";
 });
@@ -74,18 +74,11 @@ botonesFiltro.forEach(boton => {
     });
 });
 
-// Abrir modal
+// Abrir ventana emergente
 articulos.forEach(article => {
     article.addEventListener("click", () => {
         modalBody.innerHTML = `<article class="articulo">${article.innerHTML}</article>`;
 
         modal.classList.add("show");
     });
-});
-
-// Cerrar al hacer click fuera
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.classList.remove("show");
-    }
 });
