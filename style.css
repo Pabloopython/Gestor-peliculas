@@ -1,100 +1,217 @@
-#centrado{
-     display: flex;
+/* Este contenedor organiza los artículos de las películas */
+#centrado {
+    display: flex;
+    /* Usamos flexbox para ordenar los elementos */
     flex-wrap: wrap;
+    /* Permite que los elementos bajen a otra línea */
     justify-content: center;
+    /* Centra los artículos horizontalmente */
     gap: 20px;
+    /* Espacio entre artículos */
     align-items: stretch;
-}
-   
-    
-
-section {
-    margin-top: 10px;
-    margin-block-end: 10px;
+    /* Hace que todos tengan la misma altura */
 }
 
-html{
-    background-color: #3C7987;
-}
-
-
-
-article{
-    width: 450px;
-    padding: 20px;
-    border: 2px solid black;
-    background-color: #9DDAE9;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px solid grey;
-    
-}
-
+/* Estilo del título principal */
 #título {
     color: rgb(15, 55, 238);
-    background-color: rgb(235, 235, 235);
+    background-color: aquamarine;
     text-align: center;
     padding: 15px;
     border: 3px solid #000000;
-    margin: 0px;
     font-family: Helvetica;
+
+    transition: all 0.5s ease;
 }
 
+body {
+    background-color: rgba(117, 200, 221, 0.76);
+}
+
+/* Estilo de cada tarjeta de película */
+article {
+    width: 500px;
+    padding: 20px;
+    border: 2px solid black;
+    background-color: aquamarine;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px solid grey;
+    
+    /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Sombra para efecto visual */
+
+    transition: all 0.5s ease;
+}
+
+/* Efecto cuando el ratón pasa por encima de un artículo */
+article:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+    /* Hace que se agrande un poco */
+    cursor: pointer;
+}
+
+/* Estilo de las imágenes de las películas */
 .imagen_pelicula {
     width: 200px;
     height: 250px;
     align-self: center;
     padding: 23px;
-
 }
 
-/* Estilos normales (para ordenador) */
-article {
-    width: 300px;
+/* Tamaños de texto según el modo de visualización */
+.small {
+    font-size: 14px;
+    transform: scale(0.9);
 }
 
-/* Estilos para móviles (pantallas de menos de 600px) */
-@media (max-width: 600px) {
-    article {
-        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
-    }
-    
-    h1 {
-        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }  
+.medium {
+    font-size: 18px;
+    transform: scale(0.95);
 }
 
-#footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* para vertical */
-    align-items: center;     /* para horizontal */
-    text-align: center;
+.large {
+    font-size: 24px;
+    transform: scale(1);
 }
 
-/* Estilos normales (para ordenador) */
-article {
-    width: 500px;
-}
-
-/* Estilos para móviles (pantallas de menos de 600px) */
-@media (max-width: 600px) {
-    article {
-        width: 100%; /* La tarjeta ocupa todo el ancho en el móvil */
-    }
-    
-    h1 {
-        font-size: 1.5rem; /* Hacemos el título un poco más pequeño */
-    }
-}
-
-/* Transición suave */
-article {
+/* Estilo del botón de cambio de vista */
+#vista {
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Efecto al pasar el ratón */
-article:hover {
-    background-color: lightblue;
-    transform: scale(1.05);
+/* Clase para modo noche */
+.noche {
+    background-color: rgb(68, 65, 65);
+    color: white;
+    transition: all 0.5s ease;
+
+    html {
+        background-color: rgb(68, 65, 65);
+        color: white;
+    }
+
+    article {
+        background-color: rgb(68, 65, 65);
+        color: white;
+    }
+
+    #título {
+        background-color: rgb(143, 137, 137);
+        color: white;
+    }
+
+    .modal-contenido {
+        background-color: rgb(143, 137, 137);
+        color: white;
+    }
+}
+
+
+/* Estilos para móviles */
+@media (max-width: 600px) {
+
+    /* Los artículos ocupan todo el ancho */
+    article {
+        width: 100%;
+    }
+
+    /* El título se hace más pequeño */
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.modal {
+    display: none;
+    /* oculto por defecto */
+    position: fixed;
+    /* se queda fijo en pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.541);
+    /* fondo oscuro */
+    z-index: 1;
+    /* lo pone por encima de TODO */
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.9s ease;
+}
+
+/* Modal visible */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-contenido {
+    background-color: aquamarine;
+    margin: 10% auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 300px;
+    max-width: 600px;
+
+    transform: scale(1.2);
+    transform-origin: center;
+    transition: all 0.4s ease;
+}
+
+/* Filtros */
+#filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+
+    transition: all 0.9s ease;
+}
+
+#filtros button {
+    padding: 8px 12px;
     cursor: pointer;
+    border-radius: 8px;
+    border: none;
+
+    transition: all 0.9s ease;
+}
+
+/* Botón activo */
+.activo {
+    background-color: black;
+    color: white;
+}
+
+/* Ocultar elementos */
+.oculto {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    /* para que no se pueda clickear */
+    transition: all 0.7s ease;
+}
+
+/* Estilo del footer */
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
