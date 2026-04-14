@@ -39,7 +39,6 @@ articulos.forEach(article => {
     });
 });
 
-<<<<<<< HEAD
 // Abrir modal
 articulos.forEach(article => {
     article.addEventListener("click", () => {
@@ -50,9 +49,6 @@ articulos.forEach(article => {
 })
 
 // Cerrar modal
-=======
-// Cerrar ventana emergente
->>>>>>> d2147f0664359f61a6bec9e5d42bab0ee3686f89
 cerrar.addEventListener("click", () => {
     modal.style.display = "none";
 });
@@ -81,21 +77,9 @@ botonesFiltro.forEach(boton => {
             if (filtro === "todos" || pelicula.dataset.categoria === filtro) {
                 pelicula.classList.remove("oculto");
             } else {
-                pelicula.classList.add("oculto");
+             pelicula.classList.add("oculto");
             }
         });
     });
 });
 
-<<<<<<< HEAD
-
-=======
-// Abrir ventana emergente
-articulos.forEach(article => {
-    article.addEventListener("click", () => {
-        modalBody.innerHTML = `<article class="articulo">${article.innerHTML}</article>`;
-
-        modal.classList.add("show");
-    });
-});
->>>>>>> d2147f0664359f61a6bec9e5d42bab0ee3686f89
