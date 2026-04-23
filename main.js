@@ -1,13 +1,17 @@
+// Buscamos los elementos del título, botón de vista, botón de modo y artículo
 const titulo = document.querySelector("h1");
 const vista = document.querySelector("#vista")
 const botonmodo = document.querySelector("#botonmodo");
 const articulo = document.querySelectorAll(".articulo")
 
+// Establecemos el color del título a negro
 titulo.style.color = "black";
 
+// Establecemos tres tamaños para los artículos: pequeño, mediano y grande
 const sizes = ["small", "medium", "large"];
 let current = 1; // empieza en medium
 
+// Cuando se pulsa "cambiar vista", se elimina la clase que ya está activa y se le suma 1 (cambia a la siguiente clase o tamaño)
 vista.addEventListener("click", () => {
     articulo.forEach(articulo => {
         articulo.classList.remove(sizes[current]);
@@ -17,28 +21,32 @@ vista.addEventListener("click", () => {
     current = (current + 1) % sizes.length;
 });
 
+// Cuando se pulsa el botón modo de vista, se carga un mensaje en la consola y se activa o desactiva la clase noche
 botonmodo.addEventListener("click", function () {
     console.log("modo");
     document.body.classList.toggle("noche");
 });
 
+// Establecemos los elementos del modal, el botón de "cerrar" modal, y el contenido del modal
 const modal = document.getElementById("modal");
 const cerrar = document.getElementById("cerrar");
 const modalBody = document.getElementById("modal-body");
 
 const articulos = document.querySelectorAll("article");
 
+// Para que el modal tenga el contenido del artículo
 articulos.forEach(article => {
     article.addEventListener("click", () => {
 
         // Copiamos todo el contenido del artículo
         modalBody.innerHTML = article.innerHTML;
 
-        // Lo ejectuta para hacer aparecer la ventana emergente
+        // Mostramos el modal
         modal.style.display = "block";
     });
 });
 
+<<<<<<< HEAD
 // Abrir modal
 articulos.forEach(article => {
     article.addEventListener("click", () => {
@@ -48,6 +56,8 @@ articulos.forEach(article => {
     });
 })
 
+=======
+>>>>>>> 12346d3817cfb41bd65c60f09eacff8f94ffed7c
 // Cerrar modal
 cerrar.addEventListener("click", () => {
     modal.style.display = "none";
@@ -72,14 +82,30 @@ botonesFiltro.forEach(boton => {
         boton.classList.add("activo");
 
         const filtro = boton.dataset.filtro;
-
+        
+        // Si la categoría de la película no coincide con el filtro, esta se oculta
         peliculas.forEach(pelicula => {
             if (filtro === "todos" || pelicula.dataset.categoria === filtro) {
-                pelicula.classList.remove("oculto");
+                pelicula.classList.remove("oculto"); // Si coincide, se mantiene en la lista
             } else {
+<<<<<<< HEAD
              pelicula.classList.add("oculto");
+=======
+                pelicula.classList.add("oculto"); 
+>>>>>>> 12346d3817cfb41bd65c60f09eacff8f94ffed7c
             }
         });
     });
 });
 
+<<<<<<< HEAD
+=======
+// Abrir modal
+articulos.forEach(article => {
+    article.addEventListener("click", () => {
+        modalBody.innerHTML = `<article class="articulo">${article.innerHTML}</article>`; // Copiar contenido del artículo al modal
+
+        modal.classList.add("show");
+    });
+});
+>>>>>>> 12346d3817cfb41bd65c60f09eacff8f94ffed7c
