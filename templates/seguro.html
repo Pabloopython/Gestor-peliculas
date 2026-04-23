@@ -9,7 +9,7 @@
     <title>Estructura de mi Proyecto</title>
 
     <!-- Conectamos el archivo CSS para dar estilo a la página -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <hr>
@@ -76,8 +76,8 @@
                 </ul>
 
                 <!-- Imágenes de la película -->
-                <img class="imagen_pelicula" src="img/cars.jpg" alt="Portada de Cars" width="200">
-                <img class="imagen_pelicula" src="img/Cars_-_poster.webp" alt="Portada de Cars" width="200">
+                <img src="{{ url_for('static', filename='img/cars.jpg') }}" alt="Logo" width="200"> 
+                <img src="{{ url_for('static', filename='img/Cars_-_poster.webp') }}" alt="Logo" width="200">
             </article>
 
 
@@ -96,10 +96,9 @@
                     <li><strong>Prioridad:</strong> media</li>
                 </ul>
 
-                <img class="imagen_pelicula" src="img/buenofeomalo.jpeg" alt="Portada de El bueno, el feo y el malo"
-                    width="200">
-                <img class="imagen_pelicula" src="img/bueno,etc.jpg" alt="Portada de El bueno, el feo y el malo"
-                    width="200">
+                
+                <img src="{{ url_for('static', filename='img/buenofeomalo.jpeg') }}" alt="Logo" width="200">
+                <img src="{{ url_for('static', filename='img/bueno,etc.jpg') }}" alt="Logo" width="200">
             </article>
 
 
@@ -118,8 +117,9 @@
                     <li><strong>Prioridad:</strong> baja</li>
                 </ul>
 
-                <img class="imagen_pelicula" src="img/campeonex.jpeg" alt="Portada de Campeonex" width="200">
-                <img class="imagen_pelicula" src="img/campeonex2.jpeg" alt="Portada de Campeonex" width="200">
+                <img src="{{ url_for('static', filename='img/campeonex.jpeg') }}" alt="Logo" width="200">
+                <img src="{{ url_for('static', filename='img/campeonex2.jpeg') }}" alt="Logo" width="200">
+
             </article>
 
 
@@ -136,8 +136,8 @@
                     <li><strong>Prioridad:</strong> alta</li>
                 </ul>
 
-                <img class="imagen_pelicula" src="img/Matanza.jpg" alt="Portada de Matanza de Texas" width="200">
-                <img class="imagen_pelicula" src="img/Matanza2.jpg" alt="Portada de Matanza de Texas" width="200">
+                <img src="{{ url_for('static', filename='img/Matanza.jpg') }}" alt="Logo" width="200">
+                <img src="{{ url_for('static', filename='img/Matanza2.jpg') }}" alt="Logo" width="200">
             </article>
 
 
@@ -154,8 +154,8 @@
                     <li><strong>Prioridad:</strong> medio</li>
                 </ul>
 
-                <img class="imagen_pelicula" src="img/diarionoa.jpg" alt="Portada de Diario de Noa" width="200">
-                <img class="imagen_pelicula" src="img/diarionoa2.jpg" alt="Portada de Diario de Noa" width="200">
+                <img src="{{ url_for('static', filename='img/diarionoa.jpg') }}" alt="Logo" width="200">
+                <img src="{{ url_for('static', filename='img/diarionoa2.jpg') }}" alt="Logo" width="200">
             </article>
 
 
@@ -172,8 +172,8 @@
                     <li><strong>Prioridad:</strong> urgente</li>
                 </ul>
 
-                <img class="imagen_pelicula" src="img/resplandor.jpeg" alt="Portada de El Resplandor" width="200">
-                <img class="imagen_pelicula" src="img/resplandor2.jpg" alt="Portada de El Resplandor" width="200">
+                <img src="{{ url_for('static', filename='img/resplandor.jpeg') }}" alt="Logo" width="200">
+                <img src="{{ url_for('static', filename='img/resplandor2.jpg') }}" alt="Logo" width="200">
             </article>
 
         </section>
@@ -198,7 +198,7 @@
     </footer>
 
     <!-- Aquí conectamos el archivo JavaScript que controla la interacción -->
-    <script src="main.js"></script>
+    <script src="static/js/main.js"></script>
 
 </body>
 
