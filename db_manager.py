@@ -1,6 +1,5 @@
 import sqlite3
 
-
 class DatabaseManager:
     def __init__(self, db_path):
         self.conexion = sqlite3.connect(db_path)
@@ -16,7 +15,8 @@ class DatabaseManager:
             director TEXT,
             protagonista TEXT,
             valoracion TEXT,
-            prioridad TEXT
+            prioridad TEXT,
+            imagen TEXT
         )
         """)
         self.conexion.commit()
