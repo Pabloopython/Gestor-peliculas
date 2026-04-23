@@ -215,3 +215,9 @@ article:hover {
     text-align: center;
     padding: 20px;
 }
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
