@@ -9,7 +9,7 @@
     <title>Estructura de mi Proyecto</title>
 
     <!-- Conectamos el archivo CSS para dar estilo a la página -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <hr>
@@ -29,8 +29,7 @@
         {% endfor %}
 
     <!-- Aquí conectamos el archivo JavaScript que controla la interacción -->
-    <script src="static/js/main.js"></script>
-    </main>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>

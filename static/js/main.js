@@ -46,6 +46,15 @@ articulos.forEach(article => {
     });
 });
 
+// Abrir modal
+articulos.forEach(article => {
+    article.addEventListener("click", () => {
+        modalBody.innerHTML = `<article class="articulo">${article.innerHTML}</article>`;
+
+        modal.classList.add("show");
+    });
+})
+
 // Cerrar modal
 cerrar.addEventListener("click", () => {
     modal.style.display = "none";
