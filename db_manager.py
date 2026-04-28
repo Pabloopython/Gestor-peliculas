@@ -1,31 +1,25 @@
 import sqlite3
 
-
 class DatabaseManager:
 
     def __init__(self, db_name):
         self.conexion = sqlite3.connect(db_name)
         self.cursor = self.conexion.cursor()
 
-        # Crear tabla si no existe
-        self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS peliculas (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                nombre TEXT,
-                descripcion TEXT,
-                director TEXT,
-                protagonista TEXT,
-                valoracion TEXT,
-                prioridad TEXT
-            )
-        ''')
-
-        # 🔥 MIGRACIÓN AUTOMÁTICA (AÑADE LA COLUMNA SI FALTA)
-        self.cursor.execute("PRAGMA table_info(peliculas)")
-        columnas = [col[1] for col in self.cursor.fetchall()]
-
-        if "imagenes" not in columnas:
-            self.cursor.execute("ALTER TABLE peliculas ADD COLUMN imagenes TEXT")
+    def crear_tabla(self):
+        self.cursor.execute("""
+        CREATE TABLE IF NOT EXISTS Peliculas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre TEXT NOT NULL,
+            descripcion TEXT,
+            director TEXT,
+            protagonista TEXT,
+            valoracion TEXT,
+            prioridad TEXT,
+            imagen TEXT
+        )
+        """)
+        self.conexion.commit()
 
         self.conexion.commit()
 

@@ -9,21 +9,27 @@
     <title>Estructura de mi Proyecto</title>
 
     <!-- Conectamos el archivo CSS para dar estilo a la página -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <hr>
 
 <body>
-    {% for item in items %}
-        <li><strong>{{ item.id }}</strong> - Nombre: {{ item.nombre }} - Descripcion: {{ item.descripcion }} - Director: {{ item.director }} - Protagonista: {{ item.protagonista }} - Valoracion: {{ item.valoracion }} - Prioridad: {{ item.prioridad }}        </li>
-    {% endfor %}
-
-   
+    <main> 
         
-    <!-- Aquí conectamos el archivo JavaScript que controla la interacción -->
-    <script src="static/js/main.js"></script>
+        {% for item in items %}
+            <article>
+                <h1>Nombre:{{ item.nombre }}</h1>
+                <h2>Descripción:{{ item.descripcion }}</h2>
+                <h3>Director:{{ item.director }}</h3>
+                <h3>Protagonista:{{ item.protagonista }}</h3>  
+                <h3>Valoración: {{ item.valoracion }}</h3>
+                <h3>Prioridad: {{ item.prioridad }}</h3>
+            </article>
+        {% endfor %}
 
+    <!-- Aquí conectamos el archivo JavaScript que controla la interacción -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>
