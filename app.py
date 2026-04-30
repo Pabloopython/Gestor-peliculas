@@ -31,3 +31,5 @@ def ver_coleccion():
 if __name__ == "__main__":
     # Arrancamos el servidor en modo debug para que se reinicie solo al guardar cambios
     app.run(debug=True)
+
+    #prueba git hub
