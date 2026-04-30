@@ -17,7 +17,7 @@ def ver_coleccion():
     
     # 3. Ejecutamos la consulta SQL
     cursor.execute("SELECT * FROM Peliculas")
-    
+
     # 4. Guardamos todos los resultados en una variable
     datos = cursor.fetchall()
     
