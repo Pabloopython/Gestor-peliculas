@@ -8,7 +8,7 @@ class DatabaseManager:
 
     def crear_tabla(self):
         self.cursor.execute("""
-        CREATE TABLE IF NOT EXISTS Peliculas (
+        CREATE TABLE IF NOT EXISTS peliculas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nombre TEXT NOT NULL,
             descripcion TEXT,
@@ -25,7 +25,7 @@ class DatabaseManager:
 
     def añadir_pelicula(self, nombre, descripcion, director, protagonista, valoracion, prioridad, imagen):
         self.cursor.execute('''
-            INSERT INTO peliculas (nombre, descripcion, director, protagonista, valoracion, prioridad, imagenes)
+            INSERT INTO peliculas (nombre, descripcion, director, protagonista, valoracion, prioridad, imagen)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         ''', (nombre, descripcion, director, protagonista, valoracion, prioridad, imagen))
 
@@ -34,7 +34,7 @@ class DatabaseManager:
     def modificar_pelicula(self, nombre, descripcion, director, protagonista, valoracion, prioridad, imagen, id_pelicula):
         self.cursor.execute('''
             UPDATE peliculas
-            SET nombre=?, descripcion=?, director=?, protagonista=?, valoracion=?, prioridad=?, imagenes=?
+            SET nombre=?, descripcion=?, director=?, protagonista=?, valoracion=?, prioridad=?, imagen=?
             WHERE id=?
         ''', (nombre, descripcion, director, protagonista, valoracion, prioridad, imagen, id_pelicula))
 
@@ -50,7 +50,7 @@ class DatabaseManager:
 
     def cargar_pelicula_seleccionada(self, id_pelicula):
         self.cursor.execute('''
-            SELECT nombre, descripcion, director, protagonista, imagenes, valoracion, prioridad
+            SELECT nombre, descripcion, director, protagonista, imagen, valoracion, prioridad
             FROM peliculas WHERE id=?
         ''', (id_pelicula,))
         return self.cursor.fetchone()

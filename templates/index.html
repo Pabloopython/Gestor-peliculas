@@ -25,6 +25,7 @@
                 <h3>Protagonista:{{ item.protagonista }}</h3>  
                 <h3>Valoración: {{ item.valoracion }}</h3>
                 <h3>Prioridad: {{ item.prioridad }}</h3>
+                <h3><img src="{{ url_for('static', filename='img/'+item.imagen) }}" alt="Logo"></h3>
             </article>
         {% endfor %}
 
