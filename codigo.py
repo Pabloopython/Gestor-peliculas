@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
+from tkinter import ttk, messagebox
 from db_manager import DatabaseManager
 import os
 
@@ -17,8 +17,6 @@ class App:
 
         self.db = DatabaseManager('peliculas_gestor.db')
         self.id_pelicula_seleccionada = None
-
-        # Cache de películas (FIX importante)
         self.peliculas_cache = []
 
         self.frame_centrado = tk.Frame(self.ventana, bg="#2E3440")
@@ -27,13 +25,14 @@ class App:
         self.frame_formulario = tk.Frame(self.frame_centrado, bg="#2E3440")
         self.frame_formulario.grid(row=0, column=0, padx=10, pady=10)
 
-        # Campos
+        # 🔥 CAMPOS (AÑADIDO CATEGORÍA)
         self.campos_info = {
             "Nombre": {},
             "Descripción": {},
             "Director": {},
             "Protagonista": {},
-            "Imagen": {}
+            "Imagen": {},
+            "Categoría": {}
         }
 
         for idx, etiqueta in enumerate(self.campos_info.keys()):
@@ -48,25 +47,25 @@ class App:
 
         # Valoración
         tk.Label(self.frame_formulario, text="Valoración:",
-                 fg="black", bg="#D3D3D3", font=("Arial", 12)).grid(row=6, column=2)
+                 fg="black", bg="#D3D3D3", font=("Arial", 12)).grid(row=7, column=2)
 
         self.combo_valo = ttk.Combobox(
             self.frame_formulario,
             values=["1/5", "2/5", "3/5", "4/5", "5/5"],
             state="readonly"
         )
-        self.combo_valo.grid(row=6, column=3)
+        self.combo_valo.grid(row=7, column=3)
 
         # Prioridad
         tk.Label(self.frame_formulario, text="Prioridad:",
-                 fg="black", bg="#D3D3D3", font=("Arial", 12)).grid(row=7, column=2)
+                 fg="black", bg="#D3D3D3", font=("Arial", 12)).grid(row=8, column=2)
 
         self.combo_prio = ttk.Combobox(
             self.frame_formulario,
             values=["Baja", "Media", "Alta", "Urgente"],
             state="readonly"
         )
-        self.combo_prio.grid(row=7, column=3)
+        self.combo_prio.grid(row=8, column=3)
 
         # Lista
         self.frame_lista = tk.Frame(self.frame_centrado)
@@ -101,7 +100,8 @@ class App:
             datos[0], datos[1], datos[2], datos[3],
             self.combo_valo.get(),
             self.combo_prio.get(),
-            datos[4]
+            datos[4],  # imagen
+            datos[5]   # categoria
         )
 
         self.actualizar_lista()
@@ -118,7 +118,8 @@ class App:
             datos[0], datos[1], datos[2], datos[3],
             self.combo_valo.get(),
             self.combo_prio.get(),
-            datos[4],
+            datos[4],  # imagen
+            datos[5],  # categoria
             self.id_pelicula_seleccionada
         )
 
@@ -140,36 +141,29 @@ class App:
 
         self.id_pelicula_seleccionada = pelicula[0]
 
-        self.campos_info["Nombre"]["entry"].delete(0, tk.END)
         self.campos_info["Nombre"]["entry"].insert(0, pelicula[1])
-
-        self.campos_info["Descripción"]["entry"].delete(0, tk.END)
         self.campos_info["Descripción"]["entry"].insert(0, pelicula[2])
-
-        self.campos_info["Director"]["entry"].delete(0, tk.END)
         self.campos_info["Director"]["entry"].insert(0, pelicula[3])
-
-        self.campos_info["Protagonista"]["entry"].delete(0, tk.END)
         self.campos_info["Protagonista"]["entry"].insert(0, pelicula[4])
-
-        self.campos_info["Imagen"]["entry"].delete(0, tk.END)
-        self.campos_info["Imagen"]["entry"].insert(0, pelicula[7] if pelicula[7] else "")
+        self.campos_info["Imagen"]["entry"].insert(0, pelicula[7] or "")
+        self.campos_info["Categoría"]["entry"].insert(0, pelicula[8] or "")
 
         self.combo_valo.set(pelicula[5])
         self.combo_prio.set(pelicula[6])
 
-    # ---------------- ACTUALIZAR LISTA ----------------
+    # ---------------- LISTA ----------------
     def actualizar_lista(self):
         self.lista_tareas.delete(0, tk.END)
 
         self.peliculas_cache = self.db.actualizar_lista()
 
         for p in self.peliculas_cache:
-            nombre_imagen = os.path.basename(p[7]) if p[7] else ""
+            img = os.path.basename(p[7]) if p[7] else ""
+            cat = p[8] if p[8] else ""
 
             self.lista_tareas.insert(
                 tk.END,
-                f"{p[1]} | {p[2]} | {p[3]} | {p[4]} | {nombre_imagen} | {p[5]} | {p[6]}"
+                f"{p[1]} | {p[2]} | {p[3]} | {p[4]} | {img} | {cat} | {p[5]} | {p[6]}"
             )
 
 
