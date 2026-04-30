@@ -16,6 +16,7 @@ class App:
         style.theme_use("clam")
 
         self.db = DatabaseManager('peliculas_gestor.db')
+        self.db.crear_tabla()
         self.id_pelicula_seleccionada = None
         self.peliculas_cache = []
 
