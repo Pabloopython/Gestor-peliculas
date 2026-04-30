@@ -15,10 +15,45 @@
 <hr>
 
 <body>
-    <main> 
+     <!-- Botón que servirá para cambiar el modo de la página (por ejemplo modo noche) -->
+    <button id="botonmodo">
+        <p>Cambiar modo</p>
+    </button>
+
+    <header>
+        <!-- Aquí ponemos el nombre de la aplicación -->
+        <em>
+            <h1 id="título">GESTOR DE PELÍCULAS</h1>
+        </em>
+
+        <!-- Botón para cambiar el modo de visualización de los artículos -->
+        <button id="vista">Modo de vista</button>
+
+        <div id="modal" class="modal">
+            <div class="modal-contenido">
+                <span id="cerrar">&times;</span>
+
+                <!-- Aquí se copiará la película completa -->
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <div id="filtros">
+            <button data-filtro="todos">Todos</button>
+            <button data-filtro="animacion">Animación</button>
+            <button data-filtro="terror">Terror</button>
+            <button data-filtro="romance">Romance</button>
+            <button data-filtro="Oeste">Oeste</button>
+        </div>
+
+    </header>
+
+    <hr>
+
+    <main id = centrado>
         
         {% for item in items %}
-            <article>
+            <article class = articulo data-filtro="animacion" data-filtro="terror" data-filtro=" romance" data-filtro="Oeste">
                 <h1>Nombre:{{ item.nombre }}</h1>
                 <h2>Descripción:{{ item.descripcion }}</h2>
                 <h3>Director:{{ item.director }}</h3>
@@ -30,6 +65,23 @@
 
     <!-- Aquí conectamos el archivo JavaScript que controla la interacción -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </main>
+
+     <footer id="footer">
+
+        <!-- Lista con información personal -->
+        <li><strong>Contacto:</strong><em> 693729263</em></li>
+        <li><strong>Redes sociales:</strong><em> gest.peliculas en Instagram</em></li>
+        <li><strong>Git-Hub:</strong>
+            <em>
+                <a href="https://github.com/Pabloopython/Gestor-peliculas" target="_blank">
+                    ¡Pincha aquí!
+                </a>
+            </em>
+        </li>
+
+    </footer>
+
 </body>
 
 </html>
