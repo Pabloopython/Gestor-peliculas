@@ -16,15 +16,31 @@ def ver_coleccion():
     cursor = conexion.cursor()
     
     # 3. Ejecutamos la consulta SQL
-    cursor.execute("SELECT * FROM Peliculas")
+    cursor.execute("SELECT * FROM peliculas")
 
     # 4. Guardamos todos los resultados en una variable
     datos = cursor.fetchall()
+    # Convertimos cada fila sqlite3.Row a dict para un uso más sencillo en Jinja
+    datos = [dict(row) for row in datos]
     
     # 5. Cerramos la conexión
     conexion.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-    # 6. Enviamos los datos reales a la plantilla
+    
+    # 6. Enviamos los datos reales (como dicts) a la plantilla
     return render_template("index.html", items=datos)
 
 # Comprobamos si el script se está ejecutando directamente (y no importado como módulo)

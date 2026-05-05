@@ -60,7 +60,12 @@
                 <h3>Protagonista:{{ item.protagonista }}</h3>  
                 <h3>Valoración: {{ item.valoracion }}</h3>
                 <h3>Prioridad: {{ item.prioridad }}</h3>
-                <h3><img src="{{ url_for('static', filename='img/'+item.imagen) }}" alt="Logo"></h3>
+                {% if item['imagenes'] %}
+                    <h3><img src="{{ url_for('static', filename='img/' + item['imagenes']) }}" alt="{{ item['nombre'] }}" class="imagen_pelicula"></h3>
+                {% else %}
+                    <!-- Fallback si no hay imagen: avatar por defecto -->
+                    <h3><img src="{{ url_for('static', filename='img/myAvatar.png') }}" alt="Sin imagen" class="imagen_pelicula"></h3>
+                {% endif %}
             </article>
         {% endfor %}
 

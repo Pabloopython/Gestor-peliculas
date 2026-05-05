@@ -93,6 +93,13 @@ class App:
         self.actualizar_lista()
         self.ventana.mainloop()
 
+    def clear_campos(self):
+        """Borra todos los campos del formulario."""
+        for campo in self.campos_info.values():
+            entry = campo.get("entry")
+            if entry:
+                entry.delete(0, tk.END)
+
     # ---------------- AÑADIR ----------------
     def añadir_pelicula(self):
         datos = [self.campos_info[c]["entry"].get() for c in self.campos_info]
@@ -106,6 +113,8 @@ class App:
         )
 
         self.actualizar_lista()
+        # Limpiamos el formulario tras añadir
+        self.clear_campos()
 
     # ---------------- MODIFICAR ----------------
     def modificar_pelicula(self):
@@ -125,6 +134,8 @@ class App:
         )
 
         self.actualizar_lista()
+        # Limpiamos el formulario tras modificar
+        self.clear_campos()
 
     # ---------------- ELIMINAR ----------------
     def eliminar_pelicula(self):
@@ -141,6 +152,11 @@ class App:
         pelicula = self.peliculas_cache[index]
 
         self.id_pelicula_seleccionada = pelicula[0]
+        # Primero limpiamos los campos para evitar inserciones acumuladas
+        for campo in self.campos_info.values():
+            entry = campo.get("entry")
+            if entry:
+                entry.delete(0, tk.END)
 
         self.campos_info["Nombre"]["entry"].insert(0, pelicula[1])
         self.campos_info["Descripción"]["entry"].insert(0, pelicula[2])
@@ -149,6 +165,7 @@ class App:
         self.campos_info["Imagen"]["entry"].insert(0, pelicula[7] or "")
         self.campos_info["Categoría"]["entry"].insert(0, pelicula[8] or "")
 
+        # Actualizamos combos
         self.combo_valo.set(pelicula[5])
         self.combo_prio.set(pelicula[6])
 
