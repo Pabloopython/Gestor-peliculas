@@ -32,7 +32,7 @@ class App:
             "Descripción": {},
             "Director": {},
             "Protagonista": {},
-            "Imagen": {},
+            "Imagenes": {},
             "Categoría": {}
         }
 

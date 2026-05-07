@@ -28,7 +28,7 @@ class DatabaseManager:
             )
         ''')
 
-        # 🔥 MIGRACIONES AUTOMÁTICAS
+        #  MIGRACIONES AUTOMÁTICAS
         self.cursor.execute("PRAGMA table_info(peliculas)")
         columnas = [col[1] for col in self.cursor.fetchall()]
 
