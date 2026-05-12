@@ -53,7 +53,7 @@
     <main id = centrado>
         
         {% for item in items %}
-            <article class = articulo Categoría="{{ item.categoria }}">
+            <article class = articulo data-categoría="{{ item.categoria }}">
                 <h1>{{ item.nombre }}</h1>
                 <h2>{{ item.descripcion }}</h2>
                 <h3>Director:{{ item.director }}</h3>
@@ -90,7 +90,9 @@
         </li>
 
     </footer>
-
+        
+    <!-- Aquí conectamos el archivo JavaScript que controla la interacción -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>

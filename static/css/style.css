@@ -40,7 +40,10 @@ article {
     /* Bordes redondeados */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     /* Sombra para efecto visual */
-
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     transition: all 0.5s ease;
 }
 
