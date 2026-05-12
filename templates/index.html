@@ -54,13 +54,12 @@
         
         {% for item in items %}
             <article class = articulo Categoría="{{ item.categoria }}">
-                <h1>Nombre:{{ item.nombre }}</h1>
-                <h2>Descripción:{{ item.descripcion }}</h2>
+                <h1>{{ item.nombre }}</h1>
+                <h2>{{ item.descripcion }}</h2>
                 <h3>Director:{{ item.director }}</h3>
                 <h3>Protagonista:{{ item.protagonista }}</h3>  
                 <h3>Valoración: {{ item.valoracion }}</h3>
                 <h3>Prioridad: {{ item.prioridad }}</h3>
-                <h3>Imagen: {{ item.imagenes }}</h3> 
                 {% if item['imagenes'] %}
                     <h3>
                         <img src="{{ url_for('static', filename='img/' + item['imagenes']) }}" alt="{{ item['nombre'] }}" class="imagen_pelicula">

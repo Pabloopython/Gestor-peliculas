@@ -37,7 +37,6 @@ def ver_coleccion():
 
 
 
-
     
     
     # 6. Enviamos los datos reales (como dicts) a la plantilla
